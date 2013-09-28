@@ -1,0 +1,29 @@
+# screen version 3.09.15 버전 이상
+hardstatus alwayslastline
+hardstatus string '%{= bW}%-Lw%{= BW}%50>%n%f* %t%{= bW}%+Lw%< %{= bG}%-= %{-}'
+vbell off
+defscrollback 20000
+
+# Make shift-PgUp and shift-PgDn work like they do in xterm.  (Note that this
+# requires xterm to be configured to pass those keys through, and not try to
+# act on them itself.)
+bindkey "^[[5;2~" eval "copy" "stuff ^u"
+bindkey -m "^[[5;2~" stuff ^u
+bindkey -m "^[[6;2~" stuff ^d
+
+# Walking around region: C+\
+bindkey -d "\034" focus down
+
+# Resizing region
+bind - resize -15
+bind + resize +15
+bind = resize =
+
+# I don't want ^a s
+bind s
+
+# Kill the current region
+bind q remove
+
+# Automatically detach on hangup
+autodetach on
