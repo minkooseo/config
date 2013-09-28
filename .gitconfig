@@ -1,0 +1,11 @@
+[user]
+	name = Minkoo Seo
+	email = minkoo.seo@gmail.com
+[credential]
+	helper = osxkeychain
+[core]
+	excludesfile = /Users/mkseo/.gitignore_global
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
