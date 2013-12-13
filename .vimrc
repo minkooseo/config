@@ -147,6 +147,7 @@ Bundle 'https://github.com/vim-scripts/FuzzyFinder.git'
 Bundle 'https://github.com/LaTeX-Box-Team/LaTeX-Box'
 "Bundle 'https://github.com/ivanov/vim-ipython'
 "Bundle 'klen/python-mode'
+Bundle 'https://github.com/Valloric/YouCompleteMe'
 
 " R plugin
 " Don't open gui R.
@@ -159,14 +160,15 @@ let g:ScreenImpl = 'Tmux'
 "let vimrplugin_by_vim_instance = 1
 " Don't replace _ with <-.
 let vimrplugin_underscore = 0
-let g:vimrplugin_term = "/Applications/Utilities/Terminal.app/Contents/MacOS/Terminal"
+let g:vimrplugin_term = "/usr/bin/gnome-terminal"
 
 " Latex-suite. viewer
-let g:Tex_ViewRule_pdf = 'Preview'
+"let g:Tex_ViewRule_pdf = 'Preview'
 
 " Latex-box
-let g:LatexBox_viewer = "/Applications/Skim.app/Contents/MacOS/Skim"
+"let g:LatexBox_viewer = "/Applications/Skim.app/Contents/MacOS/Skim"
 let g:LatexBox_latexmk_options = '-pvc'
+let g:LatexBox_latexmk_async = 1
 
 " Fuzzy Finder
 nmap <leader>ff :FufFile **/<CR>
@@ -204,3 +206,7 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " Don't autofold code
 let g:pymode_folding = 0
+
+" For pathogen neeeded by syntastic
+execute pathogen#infect()
+let g:ycm_global_ycm_extra_conf = '/home/mkseo/.ycm_extra_conf.py'
