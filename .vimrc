@@ -1,5 +1,7 @@
 set nocp
 
+set runtimepath+=$GOROOT/misc/vim
+
 filetype on
 filetype indent on
 filetype plugin on
@@ -216,3 +218,6 @@ let g:pymode_folding = 0
 
 " Go language
 au BufRead,BufNewFile *.go set filetype=go
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+autocmd FileType go compiler go
+autocmd FileType go set completeopt-=preview
