@@ -208,5 +208,11 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 let g:pymode_folding = 0
 
 " For pathogen neeeded by syntastic
-execute pathogen#infect()
-let g:ycm_global_ycm_extra_conf = '/home/mkseo/.ycm_extra_conf.py'
+" execute pathogen#infect()
+
+" YouCompleteMe
+" https://github.com/Valloric/YouCompleteMe
+" let g:ycm_global_ycm_extra_conf = '/home/mkseo/.ycm_extra_conf.py'
+
+" Go language
+au BufRead,BufNewFile *.go set filetype=go
