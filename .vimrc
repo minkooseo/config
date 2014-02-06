@@ -150,6 +150,8 @@ Bundle 'https://github.com/LaTeX-Box-Team/LaTeX-Box'
 "Bundle 'https://github.com/ivanov/vim-ipython'
 "Bundle 'klen/python-mode'
 Bundle 'https://github.com/Valloric/YouCompleteMe'
+Bundle 'https://github.com/dgryski/vim-godef'
+Bundle 'https://github.com/scrooloose/nerdtree'
 
 " R plugin
 " Don't open gui R.
