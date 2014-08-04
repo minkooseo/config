@@ -156,9 +156,8 @@ Bundle 'https://github.com/scrooloose/nerdtree'
 " R plugin
 " Don't open gui R.
 let vimrplugin_applescript = 0
-let vimrplugin_screenplugin = 1
 " Split vertically for R.
-let vimrplugin_screenvsplit = 1
+let vimrplugin_vsplit = 1
 let g:ScreenImpl = 'Tmux'
 " Each Vim uses its own R process.
 "let vimrplugin_by_vim_instance = 1
