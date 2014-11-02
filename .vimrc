@@ -19,6 +19,7 @@ set cmdheight=2
 set ignorecase
 set incsearch
 set hlsearch
+set smartcase
 set fencs=ucs-bom,utf-8,euc-kr.latin1
 set enc=utf-8
 set iminsert=0
@@ -148,7 +149,7 @@ Bundle 'https://github.com/vim-scripts/FuzzyFinder.git'
 "Bundle 'https://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
 Bundle 'https://github.com/LaTeX-Box-Team/LaTeX-Box'
 "Bundle 'https://github.com/ivanov/vim-ipython'
-"Bundle 'klen/python-mode'
+Bundle 'klen/python-mode'
 Bundle 'https://github.com/Valloric/YouCompleteMe'
 Bundle 'https://github.com/dgryski/vim-godef'
 Bundle 'https://github.com/scrooloose/nerdtree'
@@ -194,8 +195,11 @@ nmap <leader>fr :FufRenewCache<CR>
 " ]M            Jump on next class or method (normal, visual, operator modes)
 let g:pymode_rope = 1
 let g:pymode_options = 0
-let g:pymode_indent = 0
+let g:pymode_indent = 1
 let g:pymode_lint = 0
+
+" Autocomplete
+let g:pymode_rope_complete_on_dot = 0
 
 " Documentation
 let g:pymode_doc = 1
