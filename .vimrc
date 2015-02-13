@@ -45,7 +45,7 @@ set et
 
 " Compiler setting
 au FileType c set makeprg=gcc\ %
-au FileType cpp set makeprg=g++\ %
+au FileType cpp set makeprg=g++\ --std=c++11\ %
 au FileType java set makeprg=java\ %
 au FileType ruby set makeprg=ruby\ -wc\ %
 
@@ -153,6 +153,8 @@ Bundle 'klen/python-mode'
 Bundle 'https://github.com/Valloric/YouCompleteMe'
 Bundle 'https://github.com/dgryski/vim-godef'
 Bundle 'https://github.com/scrooloose/nerdtree'
+Bundle 'bling/vim-airline'
+Bundle 'https://github.com/chrisbra/changesPlugin'
 
 " R plugin
 " Don't open gui R.
@@ -197,6 +199,7 @@ let g:pymode_rope = 1
 let g:pymode_options = 0
 let g:pymode_indent = 1
 let g:pymode_lint = 0
+let g:pymode_doc = 1
 
 " Autocomplete
 let g:pymode_rope_complete_on_dot = 0
@@ -227,3 +230,23 @@ au BufRead,BufNewFile *.go set filetype=go
 " autocmd FileType go autocmd BufWritePre <buffer> Fmt
 autocmd FileType go compiler go
 autocmd FileType go set completeopt-=preview
+
+" VIM in 256 color
+set t_Co=256
+
+" Airline
+set laststatus=2  " Have airline appear without window split
+let g:airline#extensions#tabline#enabled = 1 " Buffer
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+
+" Changes plugin
+let g:changes_fixed_sign_column=1  " Fix column for change marks
