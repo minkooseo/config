@@ -136,25 +136,26 @@ endif
 imap <c-_> <ESC>:execute 'normal o' . EndToken()<CR>O
 
 " Vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle required!
-Bundle 'gmarik/vundle'
-Bundle 'project.tar.gz'
-Bundle 'https://github.com/jcfaria/Vim-R-plugin'
-Bundle 'ervandew/screen'
-Bundle 'https://github.com/vim-scripts/L9.git'
-Bundle 'https://github.com/vim-scripts/FuzzyFinder.git'
-"Bundle 'https://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
-Bundle 'https://github.com/LaTeX-Box-Team/LaTeX-Box'
-"Bundle 'https://github.com/ivanov/vim-ipython'
-Bundle 'klen/python-mode'
-Bundle 'https://github.com/Valloric/YouCompleteMe'
-Bundle 'https://github.com/dgryski/vim-godef'
-Bundle 'https://github.com/scrooloose/nerdtree'
-Bundle 'bling/vim-airline'
-Bundle 'https://github.com/chrisbra/changesPlugin'
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'project.tar.gz'
+Plugin 'https://github.com/jcfaria/Vim-R-plugin'
+Plugin 'ervandew/screen'
+Plugin 'https://github.com/vim-scripts/L9.git'
+Plugin 'https://github.com/vim-scripts/FuzzyFinder.git'
+"Plugin 'https://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+Plugin 'https://github.com/LaTeX-Box-Team/LaTeX-Box'
+"Plugin 'https://github.com/ivanov/vim-ipython'
+Plugin 'klen/python-mode'
+Plugin 'https://github.com/Valloric/YouCompleteMe'
+Plugin 'https://github.com/dgryski/vim-godef'
+Plugin 'https://github.com/scrooloose/nerdtree'
+Plugin 'bling/vim-airline'
+Plugin 'https://github.com/chrisbra/changesPlugin'
 
 " R plugin
 " Don't open gui R.
