@@ -28,6 +28,7 @@ set noea
 
 " automatically delete trailing Dos-returns,whitespace
 autocmd BufRead * silent! %s/[\r \t]\+$//
+autocmd BufWritePre * silent! %s/[\r \t]\+$//
 autocmd BufEnter *.php :%s/[ \t\r]\+$//e
 
 " Omnicompletion
