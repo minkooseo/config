@@ -1,6 +1,6 @@
 set nocp
 
-set runtimepath+=$GOROOT/misc/vim
+"set runtimepath+=$GOROOT/misc/vim
 
 filetype on
 filetype indent on
@@ -136,6 +136,13 @@ endif
 
 imap <c-_> <ESC>:execute 'normal o' . EndToken()<CR>O
 
+" Pathogen load
+filetype off
+call pathogen#infect()
+call pathogen#helptags()
+filetype plugin indent on
+syntax on
+
 " Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -151,12 +158,15 @@ Plugin 'https://github.com/vim-scripts/FuzzyFinder.git'
 "Plugin 'https://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
 Plugin 'https://github.com/LaTeX-Box-Team/LaTeX-Box'
 "Plugin 'https://github.com/ivanov/vim-ipython'
-Plugin 'klen/python-mode'
-Plugin 'https://github.com/Valloric/YouCompleteMe'
-Plugin 'https://github.com/dgryski/vim-godef'
+" Jedi and YCM isn't compatible.
+" Jedi conflict with python-mode.
+Plugin 'davidhalter/jedi-vim'
+" Plugin 'https://github.com/Valloric/YouCompleteMe'
+"Plugin 'https://github.com/dgryski/vim-godef'
 Plugin 'https://github.com/scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
-Plugin 'https://github.com/chrisbra/changesPlugin'
+"Plugin 'https://github.com/chrisbra/changesPlugin'
+call vundle#end()
 
 " R plugin
 " Don't open gui R.
@@ -204,7 +214,11 @@ let g:pymode_lint = 0
 let g:pymode_doc = 1
 
 " Autocomplete
-let g:pymode_rope_complete_on_dot = 0
+let g:pymode_rope_completion = 1
+let g:pymode_rope_complete_on_dot = 1
+let g:pymode_rope_completion_bind = '<C-Space>'
+let g:pymode_rope_autoimport = 1
+let g:pymode_rope_autoimport_import_after_complete = 1
 
 " Documentation
 let g:pymode_doc = 1
@@ -219,12 +233,23 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 " Don't autofold code
 let g:pymode_folding = 0
 
-" For pathogen neeeded by syntastic
-" execute pathogen#infect()
+" Find definition
+let g:pymode_rope_goto_definition_bind = '<leader>g'
+let g:pymode_rope_goto_definition_cmd = 'new'
 
 " YouCompleteMe
 " https://github.com/Valloric/YouCompleteMe
-" let g:ycm_global_ycm_extra_conf = '/home/mkseo/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_key_list_select_completion = ['', '']
+let g:ycm_key_list_previous_completion = ['', '']
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_warning_symbol = '>*'
+
+nnoremap <leader>gt :YcmCompleter GoTo<CR>
+nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
+"nnoremap <leader>gt :YcmCompleter GetType
+nnoremap <leader>gp :YcmCompleter GetParent<CR>
 
 " Go language
 au BufRead,BufNewFile *.go set filetype=go
