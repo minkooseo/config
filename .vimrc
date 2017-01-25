@@ -58,6 +58,7 @@ map <F2> :wa<cr>
 map <F3> <c-w>w
 map <F4> :res<cr>
 map <F5> :w<cr> :make %<cr> :cope<cr>
+map <F8> :TagbarToggle<cr>
 map <F9> :q<cr>
 
 " changing window size when splitted
@@ -82,16 +83,6 @@ let g:ScreenShellInitialFocus='shell'
 
 " showmarks settings
 let showmarks_enable = 0
-
-" Taglist settings
-"let Tlist_Process_File_Always = 0
-"let Tlist_Enable_Fold_Column = 0
-"let Tlist_Display_Tag_Scope = 0
-"let Tlist_Sort_Type = "name"
-"let Tlist_Use_Right_Window = 1
-"let Tlist_Display_Prototype = 1
-"let Tlist_Exit_OnlyWindow = 1
-"let Tlist_File_Fold_Auto_Close = 0
 
 let winManagerWindowLayout = 'FileExplorer|BufExplorer'
 
@@ -166,6 +157,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'https://github.com/scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 "Plugin 'https://github.com/chrisbra/changesPlugin'
+Plugin 'https://github.com/majutsushi/tagbar'
 call vundle#end()
 
 " R plugin
