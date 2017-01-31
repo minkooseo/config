@@ -36,7 +36,10 @@ au FileType ruby,eruby set omnifunc=rubycomplete#Complete et si
 au FileType ruby,eruby let g:rubycomplete_rails = 1
 
 " 80 column setting
-"au BufNewFile,BufRead *.c,*.h,*.rb,*.java,*.CPP,*.cc,*.C,*.hpp,*.H exec 'match Todo /\%>' .  &textwidth . 'v.\+/'
+augroup vimrc_autocmds
+  autocmd BufEnter * highlight OverLength ctermbg=red guibg=#111111
+  autocmd BufEnter * match OverLength /\%81v.*/
+augroup END
 
 " Indent settings
 set ts=2
