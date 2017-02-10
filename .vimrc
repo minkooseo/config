@@ -25,6 +25,7 @@ set enc=utf-8
 set iminsert=0
 set imsearch=0
 set noea
+set updatetime=10  " Lowered for Tagbar
 
 " automatically delete trailing Dos-returns,whitespace
 autocmd BufRead * silent! %s/[\r \t]\+$//
@@ -155,12 +156,13 @@ Plugin 'https://github.com/LaTeX-Box-Team/LaTeX-Box'
 " Jedi and YCM isn't compatible.
 " Jedi conflict with python-mode.
 Plugin 'davidhalter/jedi-vim'
-" Plugin 'https://github.com/Valloric/YouCompleteMe'
+"Plugin 'https://github.com/Valloric/YouCompleteMe'
 "Plugin 'https://github.com/dgryski/vim-godef'
 Plugin 'https://github.com/scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 "Plugin 'https://github.com/chrisbra/changesPlugin'
 Plugin 'https://github.com/majutsushi/tagbar'
+Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()
 
 " R plugin
@@ -177,6 +179,8 @@ let g:vimrplugin_term = "/usr/bin/gnome-terminal"
 
 " Latex-suite. viewer
 "let g:Tex_ViewRule_pdf = 'Preview'
+
+let g:jedi#use_splits_not_buffers='top'
 
 " Latex-box
 "let g:LatexBox_viewer = "/Applications/Skim.app/Contents/MacOS/Skim"
