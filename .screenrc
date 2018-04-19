@@ -1,6 +1,6 @@
 # screen version 3.09.15 버전 이상
 hardstatus alwayslastline
-hardstatus string '%{= bW}%-Lw%{= BW}%50>%n%f* %t%{= bW}%+Lw%< %{= bG}%-= %{-}'
+hardstatus string '%{= bW}%-Lw%{= kW}%50>%n%f* %t%{= bW}%+Lw%< %{= bG}%-= %{-}'
 vbell off
 defscrollback 20000
 
